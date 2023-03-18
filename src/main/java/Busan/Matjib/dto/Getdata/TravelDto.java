@@ -1,6 +1,7 @@
 package Busan.Matjib.dto.Getdata;
 
 import lombok.Getter;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 public class TravelDto {
@@ -22,6 +23,18 @@ public class TravelDto {
     private String travelAddr;//<ADDR1> 주소
     private String travelHomepage;//<HOMEPAGE_URL> 홈페이지 주소
     private String travelImgAddr;// <MAIN_IMG_THUMB> 이미지주소
+
+    private MultipartFile imgFile;
+
+    public void setTravelImgAddr(String travelImgAddr) {
+        this.travelImgAddr = travelImgAddr;
+    }
+
+    public void setImgFile(MultipartFile imgFile) {
+        this.imgFile = imgFile;
+    }
+
+
 
     public TravelDto(TravelDto travel) {
         this.travelPlace = travel.travelPlace;
